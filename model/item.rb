@@ -2,20 +2,31 @@ class Item
   attr_reader :id, :archived
   attr_accessor :genre, :author, :label, :publish_date
 
-  def initialize(genre:, author:, label:, publish_date: DateTime.now.to_s.slice(0, 10))
-    @genre = genre
-    @author = author
-    @label = label
-    @publish_date = publish_date
+  def initialize(publish_date:)
+    @publish_date = Date.parse(publish_date)
     @id = Random.rand(1..1000)
     @archived = false
   end
 
-  def can_be_archived?
-    @can_be_archived = true
+  def set_genre(genre:)
+    @genre = genre
+  end
+
+  def set_author(author:)
+    @author = author
+  end
+
+  def set_label(label:)
+    @label = label
   end
 
   def move_to_archive
     @archived = true if can_be_archived?
+  end
+
+  private
+
+  def can_be_archived?
+    true if (Date.today - @publish_date).to_i > 10
   end
 end
