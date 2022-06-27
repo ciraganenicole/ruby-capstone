@@ -1,6 +1,7 @@
 class Item
   attr_reader :id, :archived
   attr_accessor :genre, :author, :label, :publish_date
+
   def initialize(genre:, author:, label:, publish_date: DateTime.now.to_s.slice(0, 10))
     @genre = genre
     @author = author
@@ -17,5 +18,4 @@ class Item
   def move_to_archive
     @archived = true if can_be_archived?
   end
-
 end
