@@ -1,3 +1,4 @@
+require 'date'
 class Item
   attr_reader :id, :archived
   attr_accessor :genre, :author, :label, :publish_date
@@ -30,3 +31,6 @@ class Item
     true if (Date.today - @publish_date).to_i > 10
   end
 end
+
+s = Item.new(publish_date: '2020-10-14')
+puts s.publish_date

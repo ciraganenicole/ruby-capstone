@@ -1,25 +1,18 @@
 require_relative '../model/item'
+require 'date'
 
 describe Item do
   before(:example) do
-    @instance = Item.new(genre: 'genre', author: 'author', label: 'label', publish_date: 'publish_date')
+    @instance = Item.new(publish_date: '2010-10-14')
   end
 
   it 'should initialize' do
-    expect(@instance.genre).to eq('genre')
-    expect(@instance.author).to eq('author')
-    expect(@instance.label).to eq('label')
-    expect(@instance.publish_date).to eq('publish_date')
+    expect(@instance.publish_date).to eq(Date.parse('2010-10-14'))
   end
 
   it 'should move item to archive if item can be archived' do
-    @instance.move_to_archive if @instance.can_be_archived?
+    @instance.move_to_archive
     expect(@instance.archived).to be(true)
   end
 
-  it 'should give unique id to each instance' do
-    @id = Random.rand(1..1000)
-    another_instance = Item.new(genre: 'genre', author: 'author', label: 'label', publish_date: 'publish_date')
-    expect(another_instance.id).to be(another_instance.id)
-  end
 end
