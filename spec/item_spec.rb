@@ -14,5 +14,4 @@ describe Item do
     @instance.move_to_archive
     expect(@instance.archived).to be(true)
   end
-
 end
