@@ -28,9 +28,9 @@ class Item
   private
 
   def can_be_archived?
-    true if (Date.today - @publish_date).to_i > 10
+    true if (Date.today.to_time.year - @publish_date.to_time.year) > 10
   end
 end
 
-s = Item.new(publish_date: '2020-10-14')
-puts s.publish_date
+# s = Item.new(publish_date: '2020-10-14')
+# puts s.publish_date
