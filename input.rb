@@ -1,9 +1,9 @@
 class Input
   def self.check_input(input, app)
     case input
-    when 1..5
+    when 1..6
       list_data(input, app)
-    when 6..8
+    when 7..9
       add_data(input, app)
     when 0
       puts 'Goodbye!'
@@ -22,9 +22,11 @@ class Input
     when 3
       #  List of games
     when 4
-      #  List of genres
+      #  List all genres
     when 5
-      #  List of authors
+      #  List all labels
+    when 6
+      #  List all authors
     else
       puts 'invalid input'
     end
@@ -32,11 +34,11 @@ class Input
 
   def self.add_data(input, _app)
     case input
-    when 6
-      #  Add a book
     when 7
-      #  Add a music album
+      #  Add a book
     when 8
+      #  Add a music album
+    when 9
       #  Add a game
     else
       puts 'invalid input'
