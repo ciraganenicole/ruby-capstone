@@ -1,10 +1,10 @@
 class Input
-  def self.check_input(input)
+  def self.check_input(input, app)
     case input
     when 1..5
-      list_data(input)
+      list_data(input, app)
     when 6..8
-      add_data(input)
+      add_data(input, app)
     when 0
       puts 'Goodbye!'
       raise StopIteration
@@ -13,7 +13,7 @@ class Input
     end
   end
 
-  def self.list_data(input)
+  def self.list_data(input, _app)
     case input
     when 1
       #   List all books
@@ -30,7 +30,7 @@ class Input
     end
   end
 
-  def self.add_data(input)
+  def self.add_data(input, _app)
     case input
     when 6
       #  Add a book

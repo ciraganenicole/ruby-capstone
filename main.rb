@@ -1,6 +1,10 @@
 require './input'
+require './app'
 def main
   # Add some logic for the database
+  app = App.new
+  storage = Storage.new
+  storage.load_data(app)
   loop do
     puts 'Welcome to : Catalog of my things ! :)'
     puts '1 - List all books'
@@ -13,7 +17,7 @@ def main
     puts '8 - Add a game'
     puts '0 - Exit'
     input = gets.chomp.to_i
-    Input.check_input(input)
+    Input.check_input(input, app)
   end
   puts 'Thank you for using our service :)'
 end
