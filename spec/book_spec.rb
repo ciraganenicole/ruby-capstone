@@ -18,5 +18,4 @@ describe Book do
     @book.move_to_archive
     expect(@book.archived).to be(true)
   end
-
 end
