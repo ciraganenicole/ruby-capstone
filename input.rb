@@ -1,3 +1,4 @@
+require './app'
 class Input
   def self.check_input(input, app)
     case input
@@ -13,7 +14,7 @@ class Input
     end
   end
 
-  def self.list_data(input, _app)
+  def self.list_data(input, app)
     case input
     when 1
       #   List all books
@@ -24,7 +25,8 @@ class Input
     when 4
       #  List all genres
     when 5
-      #  List all labels
+      puts 'List all labels'
+      app.list_labels
     when 6
       #  List all authors
     else

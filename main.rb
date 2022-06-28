@@ -4,6 +4,7 @@ require './storage'
 def main
   # Add some logic for the database
   app = App.new
+  app.populate_app
   storage = Storage.new
   storage.load_data(app)
   loop do
