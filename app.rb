@@ -1,11 +1,14 @@
 require './model/label'
 class App
-  attr_reader :genres, :authors, :labels
+  attr_reader :genres, :authors, :labels, :books, :music_album, :games
 
   def initialize
     @genres = []
     @authors = []
     @labels = []
+    @books = []
+    @music_album = []
+    @games = []
   end
 
   def populate_app
@@ -19,6 +22,11 @@ class App
 
   def add_author(item)
     # @author.add_item(item)
+  end
+
+  # Add a book
+  def create_book(book)
+    @books << book
   end
 
   # Label part
