@@ -6,7 +6,9 @@ class MusicHandler
   @storage = Storage.new
   def self.add_music(app)
     print 'Is it on spotify? [Yes/No]: '
-    gets.chomp
+    on_spotify = gets.chomp
+    music = Music.new(on_spotify: on_spotify)
+    app.create_music(music)
     puts 'Music created successfully !!!'
     @storage.save_music(app)
   end
