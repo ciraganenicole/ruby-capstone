@@ -1,5 +1,6 @@
 require './app'
 require './handler/book_handler'
+require './handler/music_handler'
 class Input
   def self.check_input(input, app)
     case input
@@ -22,10 +23,16 @@ class Input
       BookHandler.list_books(app)
     when 2
       #  List all music albums
+      puts 'List all musics'
+      MusicHandler.list_musics(app)
     when 3
       #  List of games
     when 4
       #  List all genres
+      puts
+      puts 'Here is genres list: '
+      puts
+      app.list_genres
     when 5
       puts 'List all labels'
       app.list_labels
@@ -43,6 +50,7 @@ class Input
       BookHandler.add_book(app)
     when 8
       #  Add a music album
+      MusicHandler.add_music(app)
     when 9
       #  Add a game
     else
