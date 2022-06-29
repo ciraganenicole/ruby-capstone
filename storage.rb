@@ -13,9 +13,6 @@ class Storage
     end
   end
 
-  # this method is called to save all data
-  def save_data(app); end
-
   # Implement your own logic to save your data
   def save_book(app)
     return unless File.file?('books.json')
@@ -25,10 +22,19 @@ class Storage
     people_file.close
   end
 
+  def save_game(app)
+    return unless File.file?('games.json')
+
+    people_file = File.open('games.json', 'w')
+    people_file.write(JSON.generate(app.games))
+    people_file.close
+  end
+
   # this method is called to load all data
   def load_data(app)
     puts 'Loading informations...'
     load_book(app)
+    load_games(app)
   end
 
   def load_book(app)
@@ -40,5 +46,17 @@ class Storage
     book_list.each { |book| app.create_book(Book.new(cover_state: book['cover_state'], publisher: book['publisher'])) }
     # puts app.books
     book_file.close
+  end
+
+  def load_games(app)
+    return unless File.file?('games.json')
+    return if File.zero?('games.json')
+
+    game_file = File.open('games.json', 'r')
+    game_list = JSON.parse(game_file.read)
+    game_list.each do |game|
+      app.create_game(Game.new(game['multiplayer'], game['last_played_date'], game['publish_date']))
+    end
+    game_file.close
   end
 end

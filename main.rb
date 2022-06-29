@@ -6,6 +6,7 @@ require './options'
 def main
   app = App.new
   app.populate_app
+  app.populate_author
   storage = Storage.new
   storage.prepare_storage
   storage.load_data(app)
