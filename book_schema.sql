@@ -5,6 +5,7 @@ CREATE TABLE IF NOT EXISTS book (
     id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     publisher varchar(40),
     cover_state varchar(40),
+    publish_date date,
     archived bool
 );
 
@@ -16,10 +17,8 @@ CREATE TABLE label (
 
 ALTER TABLE book
 ADD COLUMN label INT,
-ADD FOREIGN KEY (label_id) REFERENCES label(id),
+ADD FOREIGN KEY (id) REFERENCES label(id),
 ADD COLUMN genre INT,
-ADD FOREIGN KEY (genre_id) REFERENCES genre(id),
+ADD FOREIGN KEY (id) REFERENCES genre(id),
 ADD COLUMN author INT,
-ADD FOREIGN KEY (author_id) REFERENCES author(id),
-ADD COLUMN cource INT,
-ADD FOREIGN KEY (cource_id) REFERENCES cource(id);
+ADD FOREIGN KEY (id) REFERENCES author(id);

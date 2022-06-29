@@ -1,10 +1,11 @@
 require './model/book'
+require './model/music'
 require 'json'
 class Storage
   attr_reader :files
 
   def initialize
-    @files = %w[books.json games.json albums.json]
+    @files = %w[books.json games.json musics.json]
   end
 
   def prepare_storage
@@ -28,6 +29,14 @@ class Storage
     people_file = File.open('games.json', 'w')
     people_file.write(JSON.generate(app.games))
     people_file.close
+   end
+  
+  def save_music(app)
+    return unless File.file?('musics.json')
+
+    music_file = File.open('musics.json', 'w')
+    music_file.write(JSON.generate(app.musics))
+    music_file.close
   end
 
   # this method is called to load all data
@@ -35,6 +44,7 @@ class Storage
     puts 'Loading informations...'
     load_book(app)
     load_games(app)
+    load_music(app)
   end
 
   def load_book(app)
@@ -58,5 +68,14 @@ class Storage
       app.create_game(Game.new(game['multiplayer'], game['last_played_date'], game['publish_date']))
     end
     game_file.close
+   end
+  def load_music(app)
+    return unless File.file?('musics.json')
+    return if File.zero?('musics.json')
+
+    music_file = File.open('musics.json', 'r')
+    music_list = JSON.parse(music_file.read)
+    music_list.each { |music| app.create_music(Music.new(on_spotify: music['on_spotify'])) }
+    music_file.close
   end
 end
