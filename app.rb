@@ -17,11 +17,11 @@ class App
     labels = [Label.new(title: 'Drama', color: 'red'), Label.new(title: 'Fantasy', color: 'green')]
     labels.each { |label| @labels.push(label) }
 
-    genres = [Genre.new(name:'Comedy'), Genre.new(name:'Thriller'), Genre.new(name:'Pop'), Genre.new(name:'Hip-hop and Rap'), Genre.new(name:'Rock'),
-    Genre.new(name:'Reggae'), Genre.new(name:'Rhumba'), Genre.new(name:'Country'), Genre.new(name:'Dance and Electronic'),
-    Genre.new(name: 'Other')]
+    genres = [Genre.new(name: 'Comedy'), Genre.new(name: 'Thriller'), Genre.new(name: 'Pop'),
+              Genre.new(name: 'Hip-hop and Rap'), Genre.new(name: 'Rock'),
+              Genre.new(name: 'Reggae'), Genre.new(name: 'Rhumba'), Genre.new(name: 'Country'),
+              Genre.new(name: 'Dance and Electronic'), Genre.new(name: 'Other')]
     genres.each { |genre| @genres.push(genre) }
-    
   end
 
   def add_author(item)
@@ -44,19 +44,19 @@ class App
     end
   end
 
-    # Add a music
-    def create_music(music)
-      @musics << music
+  # Add a music
+  def create_music(music)
+    @musics << music
+  end
+
+  # Genre part
+  def add_genre(item)
+    @genres.add_item(item)
+  end
+
+  def list_genres
+    @genres.each_with_index do |genre, index|
+      puts "#{index}. ID: #{genre.id} Name: #{genre.name}"
     end
-  
-    # Genre part
-    def add_genre(item)
-      @genres.add_item(item)
-    end
-  
-    def list_genres
-      @genres.each_with_index do |genre, index|
-        puts "#{index}. ID: #{genre.id} Name: #{genre.name}"
-      end
-    end
+  end
 end

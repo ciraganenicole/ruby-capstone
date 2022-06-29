@@ -11,7 +11,7 @@ class Genre
 
   def to_json(*_args)
     JSON.dump({
-                name: @name,
+                name: @name
               })
   end
 

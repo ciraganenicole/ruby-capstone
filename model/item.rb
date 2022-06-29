@@ -31,4 +31,3 @@ class Item
     true if (Date.today.to_time.year - @publish_date.to_time.year) > 10
   end
 end
-

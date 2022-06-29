@@ -3,7 +3,7 @@ require 'date'
 
 describe Music do
   before :each do
-        @music = Music.new(on_spotify: true)
+    @music = Music.new(on_spotify: true)
   end
 
   it 'should return true' do
