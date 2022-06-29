@@ -32,5 +32,3 @@ class Item
   end
 end
 
-# s = Item.new(publish_date: '2020-10-14')
-# puts s.publish_date
