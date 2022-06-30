@@ -1,56 +1,82 @@
-![](https://img.shields.io/badge/Microverse-blueviolet)
+# Catalog of my things
 
-# Project Name
+> In this project, you will create a console app that will help you to keep a record of different types of things you won: books, music albums, movies, and games. Everything will be based on the UML class diagram presented below. The data will be stored in JSON files but you will also prepare a database with tables structure analogical to your program's class structure.
 
-> Description the project.
+![catalog_of_my_things](https://user-images.githubusercontent.com/72297212/176618937-4c4a38d8-4e6b-4945-b3c6-7310c8e7f2a3.png)
+
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
+### Languages
 
-## Live Demo (if available)
+- Ruby
+- PostgreSql
 
-[Live Demo Link](https://livedemo.com)
+### Tools
+
+- Git
+- Github
+- Visual Studio Code
+
+## Link to the video
+
+Video link
 
 
 ## Getting Started
 
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
+To get the content of this project locally you need:
 
-
-To get a local copy up and running follow these simple example steps.
-
-### Prerequisites
+- A terminal
+- A code editor
+- Ruby (follow the instructions based on your OS: [https://www.ruby-lang.org/en/documentation/installation/](https://www.ruby-lang.org/en/documentation/installation/))
 
 ### Setup
 
-### Install
+#### Clone the repository
 
-### Usage
+Run ``` git clone https://github.com/ciraganenicole/ruby-capstone.git ``` in your terminal
+
+#### Move in the directory with
+
+``` cd ruby-capstone ```
+
+### Run project
+
+``` ruby main.rb ```
+
+### Install 
+
+``` bundle install ```
+
+### Run linters
+
+``` rubocop ```
 
 ### Run tests
 
-### Deployment
-
-
+``` rspec spec ```
 
 ## Authors
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@kosher9](https://github.com/kosher9)
+- Twitter: [@kosherus](https://twitter.com/kosherus)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/lionel-c%C3%A9dric-kossi-323042172/)
 
 👤 **Author2**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@KaitCham](https://github.com/kaitcham)
+- Twitter: [@KaitCham](https://twitter.com/kaitcham)
+- LinkedIn: [KaitCham](https://www.linkedin.com/in/kaitcham/)
+
+👤 **Author3**
+
+- GitHub: [@ciraganenicole](https://github.com/ciraganenicole)
+- Twitter: [@CiraganeN](https://twitter.com/CiraganeN)
+- LinkedIn: [CiraganeNicole](https://www.linkedin.com/in/nicole-ciragane-19a3071bb/)
 
 ## 🤝 Contributing
 
@@ -61,12 +87,6 @@ Feel free to check the [issues page](../../issues/).
 ## Show your support
 
 Give a ⭐️ if you like this project!
-
-## Acknowledgments
-
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
 
 ## 📝 License
 
