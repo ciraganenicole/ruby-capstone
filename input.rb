@@ -30,9 +30,7 @@ class Input
       GameHandler.list_games(app)
     when 4
       #  List all genres
-      puts
       puts 'Here is genres list: '
-      puts
       app.list_genres
     when 5
       puts 'List all labels'
