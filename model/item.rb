@@ -11,14 +11,17 @@ class Item
 
   def set_genre(genre:)
     @genre = genre
+    genre.items.push(self) unless genre.items.include?(self)
   end
 
   def set_author(author:)
     @author = author
+    author.items.push(self) unless author.items.include?(self)
   end
 
   def set_label(label:)
     @label = label
+    label.items.push(self) unless label.items.include?(self)
   end
 
   def move_to_archive
